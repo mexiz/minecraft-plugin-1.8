@@ -1,0 +1,43 @@
+name: mexiz
+version: 1.0
+main: de.mexiz.plugin.main.Main
+
+commands:
+   heal:
+      description: Heilt dich.
+   tpa:
+      description: Tpa-Anfrage schicken.
+   tpaccept:
+      description: Tpa-Anfrage akzeptieren.  
+   gm:
+      description: Gamemode setter.   
+   threebythree:
+      description: 3x3 Spitzhacke erschaffen.   
+   bp:
+      description: Backpack. 
+   b:
+      description: Backpack.   
+   warp:
+      description: Warping. 
+   setwarp:
+      description: setwarp.
+   warps:
+      description: setwarp.
+   delwarp:
+      description: delwarp.
+   world:
+      description: world.	      
+   worlds:
+      description: world.
+   flip:
+      description: CoinFlip.
+   g:
+      description: GemeinschaftsBackPack.
+   trash:
+      description: trash.  	
+   deathpoint:
+      description: deathpoint.		  
+   mexiz:
+      description: test only.
+   m:
+      description: test only.
