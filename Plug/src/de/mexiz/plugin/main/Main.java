@@ -57,14 +57,13 @@ public class Main extends JavaPlugin {
 // Teleport
 	public static HashMap<Player, Player> tpa = new HashMap<Player, Player>();
 	public static Plugin instance;
-//------------------------------------------------------------	
+//------------------------------------------------------------
 // 3x3
 	public Logger log = null;
 	private String lore = "�3�o eine Spitzhacke vom Meister";
 	private int radius = 3;
 	private boolean credit;
 	private boolean natural;
-	public int test;
 //------------------------------------------------------------
 // Backpack
 	public HashMap<UUID, Inventory> backpack = new HashMap<UUID, Inventory>();
