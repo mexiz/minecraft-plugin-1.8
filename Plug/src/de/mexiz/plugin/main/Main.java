@@ -44,26 +44,27 @@ import de.mexiz.plugin.listener.SleepListener;
 import de.mexiz.plugin.listener.ThreebyThreeListener;
 import net.md_5.bungee.api.ChatColor;
 
-public class Main extends JavaPlugin {	
-// WORLD	
+public class Main extends JavaPlugin {
+// WORLD
 	public World world2;
 	public World mainworld;
 	public World mainnether;
 	public World mainend;
-//------------------------------------------------------------		
+//------------------------------------------------------------
 // SleepListener
 	public int imBett;
-//------------------------------------------------------------		
+//------------------------------------------------------------
 // Teleport
 	public static HashMap<Player, Player> tpa = new HashMap<Player, Player>();
 	public static Plugin instance;
 //------------------------------------------------------------	
 // 3x3
 	public Logger log = null;
-	private String lore = "§3§o eine Spitzhacke vom Meister";
+	private String lore = "ï¿½3ï¿½o eine Spitzhacke vom Meister";
 	private int radius = 3;
 	private boolean credit;
 	private boolean natural;
+	public int test;
 //------------------------------------------------------------
 // Backpack
 	public HashMap<UUID, Inventory> backpack = new HashMap<UUID, Inventory>();
@@ -71,11 +72,11 @@ public class Main extends JavaPlugin {
 //------------------------------------------------------------
 // ONENABLE
 	public void onEnable() {
-		
+
 // Backpack
 		for(Player pBackpack : Bukkit.getOnlinePlayers())backpackload(pBackpack);
-        
-//------------------------------------------------------------		
+
+//------------------------------------------------------------
 		if(!this.getDataFolder().exists()) {
 			this.getDataFolder().mkdir();
 		}
@@ -101,8 +102,8 @@ public class Main extends JavaPlugin {
 		getCommand("deathpoint").setExecutor(new DeathPointCommand(this));
 		getCommand("mexiz").setExecutor(new MexizCommand());
 		getCommand("m").setExecutor(new MexizCommand());
-		
-//------------------------------------------------------------	
+
+//------------------------------------------------------------
 //EventListeners
 		PluginManager pluginmanager = Bukkit.getPluginManager();
 		pluginmanager.registerEvents(new PortalListener(this), this);
@@ -111,26 +112,26 @@ public class Main extends JavaPlugin {
 		pluginmanager.registerEvents(new JoinListener(this), this);
 		pluginmanager.registerEvents(new LeaveListener(), this);
 		pluginmanager.registerEvents(new SleepListener(this), this);
-//InventoryCloseListener 
+//InventoryCloseListener
 		pluginmanager.registerEvents(new InventoryCloseListener(this), this);
 // 3x3
 		getServer().getPluginManager().registerEvents(new ThreebyThreeListener(this), this);
-		
+
 //------------------------------------------------------------
 		this.log = Logger.getLogger("Minecraft");
 // 3x3
 		setupConfigValues();
 //------------------------------------------------------------
 		recipesetter();
-		Bukkit.getConsoleSender().sendMessage("§8|-----------------------------------------------|");
-		Bukkit.getConsoleSender().sendMessage("§b|------mexiz------------------------------------|");
-		Bukkit.getConsoleSender().sendMessage("§6|-----------mexiz-------------------------------|");
-		Bukkit.getConsoleSender().sendMessage("§5|----------------mexiz--------------------------|");
-		Bukkit.getConsoleSender().sendMessage("§4|---------------------mexiz---------------------|");
-		Bukkit.getConsoleSender().sendMessage("§5|--------------------------mexiz----------------|");
-		Bukkit.getConsoleSender().sendMessage("§6|-------------------------------mexiz-----------|");
-		Bukkit.getConsoleSender().sendMessage("§b|------------------------------------mexiz------|");
-		Bukkit.getConsoleSender().sendMessage("§8|_______________________________________________|");
+		Bukkit.getConsoleSender().sendMessage("ï¿½8|-----------------------------------------------|");
+		Bukkit.getConsoleSender().sendMessage("ï¿½b|------mexiz------------------------------------|");
+		Bukkit.getConsoleSender().sendMessage("ï¿½6|-----------mexiz-------------------------------|");
+		Bukkit.getConsoleSender().sendMessage("ï¿½5|----------------mexiz--------------------------|");
+		Bukkit.getConsoleSender().sendMessage("ï¿½4|---------------------mexiz---------------------|");
+		Bukkit.getConsoleSender().sendMessage("ï¿½5|--------------------------mexiz----------------|");
+		Bukkit.getConsoleSender().sendMessage("ï¿½6|-------------------------------mexiz-----------|");
+		Bukkit.getConsoleSender().sendMessage("ï¿½b|------------------------------------mexiz------|");
+		Bukkit.getConsoleSender().sendMessage("ï¿½8|_______________________________________________|");
 
 	}
 //------------------------------------------------------------
@@ -138,12 +139,12 @@ public class Main extends JavaPlugin {
 	public void onDisable() {
 	}
 //------------------------------------------------------------
-// 3x3	  
+// 3x3
 	private void setupConfigValues() {
 		this.radius = 10;
 		this.credit = true;
 		this.natural = true;
-		this.lore = "§3§o eine Spitzhacke vom Meister";
+		this.lore = "ï¿½3ï¿½o eine Spitzhacke vom Meister";
 	}
 	@SuppressWarnings("deprecation")
 	private void recipesetter() {
@@ -154,7 +155,7 @@ public class Main extends JavaPlugin {
 		List<String> fore = new ArrayList<String>();
 		fore.add(lore);
 		bomerMeta.setLore(fore);
-		bomerMeta.setDisplayName("§63x3§4Pickaxe§8-§6Noch:§8-§a" + ((1561 - bomer.getDurability())) / 30);
+		bomerMeta.setDisplayName("ï¿½63x3ï¿½4Pickaxeï¿½8-ï¿½6Noch:ï¿½8-ï¿½a" + ((1561 - bomer.getDurability())) / 30);
 		bomer.setItemMeta(bomerMeta);
 
 		ShapedRecipe bomerRecipe = new ShapedRecipe(bomer);
@@ -206,7 +207,7 @@ public class Main extends JavaPlugin {
 	public void backpackload(Player a) {
 		//BackPack
 		if(!this.checkHashMapBackpack(a.getUniqueId())) {
-			Inventory inv = Bukkit.getServer().createInventory(a, InventoryType.CHEST , "§6BackPack von §c" + a.getName());
+			Inventory inv = Bukkit.getServer().createInventory(a, InventoryType.CHEST , "ï¿½6BackPack von ï¿½c" + a.getName());
 			this.setHashMapBackpack(a.getUniqueId(), inv);
 		}
 		File file = new File("plugins//mexiz//Backpack//" + a.getName() + ".yml" );
@@ -217,7 +218,7 @@ public class Main extends JavaPlugin {
 			lol.clear();
 			ItemStack[] contents = lol.getContents();
 			List<?> list = inv1.getList("Inventory");
-			for (int i = 0; i < list.size(); i++) {	
+			for (int i = 0; i < list.size(); i++) {
 				contents[i] = (ItemStack) list.get(i);
 			}
 			lol.setContents(contents);
@@ -235,14 +236,14 @@ public class Main extends JavaPlugin {
 			lol2.clear();
 			ItemStack[] contents1 = lol2.getContents();
 			List<?> list2 = inv2.getList("Inventory");
-			for (int i = 0; i < list2.size(); i++) {	
+			for (int i = 0; i < list2.size(); i++) {
 				contents1[i] = (ItemStack) list2.get(i);
 			}
 			lol2.setContents(contents1);
 			this.setgemeinsambackpack(lol2);
 		}
-		
-		
+
+
 	}
 	public void setgemeinsambackpack(Inventory inv) {
 		this.gemeinschaftsbackpack = inv;
@@ -255,7 +256,7 @@ public class Main extends JavaPlugin {
 	public void loadConfig() {
 		getConfig().options().copyDefaults(true);
 		saveConfig();
-	}	
+	}
 	public void createWorld() {
 		WorldCreator c = new WorldCreator("world2");
 		c.generateStructures(false);
@@ -263,7 +264,7 @@ public class Main extends JavaPlugin {
 		mainworld = Bukkit.getServer().getWorlds().get(0);
 		mainnether = Bukkit.getServer().getWorlds().get(1);
 		mainend = Bukkit.getServer().getWorlds().get(2);
-		
+
 	}
 	public World getworld2() {
 		return world2;
