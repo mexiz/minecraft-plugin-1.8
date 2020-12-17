@@ -64,6 +64,7 @@ public class Main extends JavaPlugin {
 	private int radius = 3;
 	private boolean credit;
 	private boolean natural;
+	//TEST
 //------------------------------------------------------------
 // Backpack
 	public HashMap<UUID, Inventory> backpack = new HashMap<UUID, Inventory>();
