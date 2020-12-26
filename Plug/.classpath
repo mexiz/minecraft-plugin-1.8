@@ -6,6 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="D:/Markus/Dokumente/Dev/mc_plug/workspace_plugin_mc/spigot.jar"/>
+	<classpathentry kind="lib" path="C:/Users/markus/git/minecraft-plugin-1.8/Plug/src/de/mexiz/plugin/spigot-1.16.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
