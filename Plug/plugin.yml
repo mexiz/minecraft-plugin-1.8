@@ -41,3 +41,5 @@ commands:
       description: test only.
    m:
       description: test only.
+   casino:
+      description: test only.

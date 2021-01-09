@@ -11,6 +11,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.WorldCreator;
+import org.bukkit.block.Block;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
@@ -23,6 +24,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.mexiz.plugin.commands.BackpackCommand;
+import de.mexiz.plugin.commands.CasinoCommand;
 import de.mexiz.plugin.commands.CoinFlipCommand;
 import de.mexiz.plugin.commands.DeathPointCommand;
 import de.mexiz.plugin.commands.GemeinschaftBackPackCommand;
@@ -35,6 +37,7 @@ import de.mexiz.plugin.commands.TrashCommand;
 import de.mexiz.plugin.commands.WarpCommand;
 import de.mexiz.plugin.commands.WorldCommand;
 import de.mexiz.plugin.commands.gmCommand;
+import de.mexiz.plugin.listener.CasinoListener;
 import de.mexiz.plugin.listener.InventoryCloseListener;
 import de.mexiz.plugin.listener.JoinListener;
 import de.mexiz.plugin.listener.LeaveListener;
@@ -45,6 +48,7 @@ import de.mexiz.plugin.listener.ThreebyThreeListener;
 import net.md_5.bungee.api.ChatColor;
 
 public class Main extends JavaPlugin {
+	public String casinoblock = "METADATACASINOBLOCK";
 // WORLD
 	public World world2;
 	public World mainworld;
@@ -102,6 +106,7 @@ public class Main extends JavaPlugin {
 		getCommand("deathpoint").setExecutor(new DeathPointCommand(this));
 		getCommand("mexiz").setExecutor(new MexizCommand());
 		getCommand("m").setExecutor(new MexizCommand());
+		getCommand("casino").setExecutor(new CasinoCommand(this));
 
 //------------------------------------------------------------
 //EventListeners
@@ -114,6 +119,9 @@ public class Main extends JavaPlugin {
 		pluginmanager.registerEvents(new SleepListener(this), this);
 //InventoryCloseListener
 		pluginmanager.registerEvents(new InventoryCloseListener(this), this);
+// 3x3
+		pluginmanager.registerEvents(new CasinoListener(this), this);
+//------------------------------------------------------------
 // 3x3
 		getServer().getPluginManager().registerEvents(new ThreebyThreeListener(this), this);
 
