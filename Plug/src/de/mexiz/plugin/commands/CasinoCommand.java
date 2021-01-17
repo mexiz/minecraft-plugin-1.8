@@ -29,13 +29,13 @@ public class CasinoCommand implements CommandExecutor{
 			Player player = (Player) sender;
 //			player.sendMessage("[mexiz] " + player.getTargetBlock(null, 200));
 			if (player.getTargetBlock(null, 200).getBlockData().getMaterial() == Material.BARREL ) {
-				player.sendMessage("Barrel erkannt.");
+//				player.sendMessage("Barrel erkannt.");
 				Block b = player.getTargetBlock(null, 200);
 				b.setMetadata("owner", new FixedMetadataValue(plugin, test));
 				
 				
 				if(b.getMetadata("owner").equals(test)) {
-					player.sendMessage("yes");
+//					player.sendMessage("yes");
 					
 				}
 				

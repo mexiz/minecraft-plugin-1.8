@@ -21,10 +21,10 @@ public class CasinoListener implements Listener{
 	public void onInteract(PlayerInteractEvent e) {
 		Player p = e.getPlayer();
 		Block b = e.getClickedBlock();
-		if (e.getAction() == Action.RIGHT_CLICK_BLOCK && e.getClickedBlock().getType() == Material.BARREL) {
-			p.sendMessage(ChatColor.RED + "" + main.casinoblock);
-			p.sendMessage(ChatColor.GREEN+ "" + b);
-		}
+//		if (e.getAction() == Action.RIGHT_CLICK_BLOCK && e.getClickedBlock().getType() == Material.BARREL) {
+//			p.sendMessage(ChatColor.RED + "" + main.casinoblock);
+//			p.sendMessage(ChatColor.GREEN+ "" + b);
+//		}
 		
 	}
 
